@@ -110,7 +110,7 @@
         transactStore.onsuccess = () => {
             console.info("[Transaction] ALL DONE!");
         };
-    };
+    }
     function getData(query, amt) {
         let transactGet = db
             .transaction("currencies")
@@ -130,7 +130,7 @@
             }
         };
     }
-    checkDB = (query, amt) => {
+    function checkDB(query, amt) {
         let transactCheck = db
             .transaction("currencies")
             .objectStore("currencies");
@@ -141,7 +141,7 @@
                 getData(query, amt);
             }
         };
-    };
+    }
 
     function convertCurrency() {
         const fromCurrency = document.querySelector("#from").value.substr(0, 3);
