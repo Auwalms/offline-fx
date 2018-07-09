@@ -107,6 +107,10 @@
             })
             .then(json => {
                 loadDropdown(json);
+                storeData({
+                    id: query,
+                    rate: val
+                });
             })
             .catch(ex => {
                 console.log("parsing failed", ex);
@@ -123,6 +127,7 @@
             console.info("[Transaction] ALL DONE!");
         };
     }
+
     function getData(query, amt) {
         let transactGet = db
             .transaction("currencies")
@@ -153,11 +158,10 @@
         fetch(url)
             .then(response => {
                 let results = response.json();
+
                 return results;
             })
             .then(json => {
-                console.log("parsed json", json);
-                console.log(query);
                 let val = json.results[query].val;
                 storeData({
                     id: query,
@@ -172,7 +176,7 @@
                 }
             })
             .catch(ex => {
-                console.log("parsing erro", ex);
+                console.log("parsing error", ex);
             });
     }
 })();
