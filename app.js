@@ -101,7 +101,7 @@
             });
     }
 
-    storeData = data => {
+    function storeData(data) {
         // If the browser doesn't support service worker,
         let transactStore = db
             .transaction("currencies", "readwrite")
