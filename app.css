@@ -1,0 +1,334 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: "Helvetica", "Verdana", sans-serif;
+    font-weight: 400;
+    font-display: optional;
+    color: #444;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    overflow: hidden;
+}
+
+body {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    background: #ececec;
+}
+
+.header {
+    width: 100%;
+    height: 56px;
+    color: #fff;
+    background: #3f51b5;
+    position: fixed;
+    font-size: 20px;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+        0 2px 9px 1px rgba(0, 0, 0, 0.12), 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+    padding: 16px 16px 0 16px;
+    will-change: transform;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-transition: -webkit-transform 0.233s cubic-bezier(0, 0, 0.21, 1)
+        0.1s;
+    transition: -webkit-transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s;
+    transition: transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s;
+    transition: transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s,
+        -webkit-transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s;
+    z-index: 1000;
+}
+
+.header__title {
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+@-webkit-keyframes rotate {
+    from {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    to {
+        -webkit-transform: rotate(450deg);
+        transform: rotate(450deg);
+    }
+}
+
+@keyframes rotate {
+    from {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    to {
+        -webkit-transform: rotate(450deg);
+        transform: rotate(450deg);
+    }
+}
+
+@-webkit-keyframes line {
+    0% {
+        stroke-dasharray: 2, 85.964;
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    50% {
+        stroke-dasharray: 65.973, 21.9911;
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dasharray: 2, 85.964;
+        stroke-dashoffset: -65.973;
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes line {
+    0% {
+        stroke-dasharray: 2, 85.964;
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    50% {
+        stroke-dasharray: 65.973, 21.9911;
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dasharray: 2, 85.964;
+        stroke-dashoffset: -65.973;
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+
+.main {
+    padding-top: 60px;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+select {
+    width: 12%;
+    height: 30px;
+}
+input {
+    width: 8%;
+    height: 30px;
+    padding: 5px;
+}
+button {
+    word-wrap: break-word;
+    width: 12%;
+}
+
+.card {
+    padding: 16px;
+    position: relative;
+    text-align: center;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 2px;
+    margin: 16px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+        0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.container {
+    margin: 0 auto;
+    background-color: #3f51b5;
+    color: white;
+    width: 30%;
+    padding: 20px;
+}
+
+.card .output {
+    margin: 0 auto;
+    border-color: gray;
+    border-style: solid;
+    padding: 12px;
+    box-sizing: border-box;
+}
+button,
+input {
+    width: 90%;
+}
+.select {
+    width: 90%;
+    margin: 0 auto;
+}
+.fromlabel,
+.tolabel {
+    float: left;
+    margin-right: 10%;
+    width: 10%;
+    text-align: left;
+    padding-top: 5px;
+}
+
+button {
+    height: 30px;
+}
+input {
+    padding: 10px;
+}
+select {
+    width: 80%;
+}
+#outputAmt {
+    color: black;
+    font-size: xx-large;
+    text-align: right;
+}
+
+@media screen and (max-width: 650px) {
+    .container {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .container {
+        font-size: smaller;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .container {
+        font-size: small;
+    }
+}
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}

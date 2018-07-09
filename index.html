@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <header class="header">
+        <h1 class="header__title">Currency Converter</h1>
+    </header>
+
+    <main class="main">
+        <div class="card">
+            <div class="container">
+                <div>
+                    <input type="number" min="0" id="amount" placeholder=" Enter the Amount">
+                </div>
+                <br>
+                <div class="select">
+                    <div class="fromlabel">From:</div>
+                    <select id="from">
+                        <option value="">-- Select --</option>
+                    </select>
+                    <br>
+                    <br>
+                    <div class="tolabel">To:</div>
+                    <select id="to">
+                        <option value="">-- Select --</option>
+                    </select>
+                </div>
+                <br>
+                <div>
+                    <button id="convert" type="button">Convert</button>
+                </div>
+                <br>
+                <div>
+                    <input type="text" id="outputAmt" disabled placeholder="" value="0.00" />
+                </div>
+                <div id="snackbar"></div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="./idb.min.js"></script>
+    <script src="./sw.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
