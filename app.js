@@ -57,6 +57,18 @@
         userConnection();
         convertCurrency();
     });
+    function checkDB(query, amt) {
+        let transactCheck = db
+            .transaction("currencies")
+            .objectStore("currencies");
+        let countRequest = transactCheck.count();
+        countRequest.onsuccess = () => {
+            if (countRequest.result !== 0) {
+                checkCount = true;
+                getData(query, amt);
+            }
+        };
+    }
     let db;
     let checkCount = false;
     function openDatabase(query, amt) {
@@ -127,18 +139,6 @@
             } catch (ex) {
                 checkCount = false;
                 document.querySelector("#outputAmt").value = 0;
-            }
-        };
-    }
-    function checkDB(query, amt) {
-        let transactCheck = db
-            .transaction("currencies")
-            .objectStore("currencies");
-        let countRequest = transactCheck.count();
-        countRequest.onsuccess = () => {
-            if (countRequest.result !== 0) {
-                checkCount = true;
-                getData(query, amt);
             }
         };
     }
